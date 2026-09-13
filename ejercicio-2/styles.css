@@ -1,0 +1,287 @@
+/* 
+0. general Selectors
+1. typography
+2. Header
+3. actividades destacadas
+4. experiencia
+5. destacados
+6. mapa
+7. footer
+*/
+
+
+/* 0. estilos geneaales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --principal-color: #edbe59;
+    --secondary-color: #5FEDCE;
+    --complementary-color: #EDA159;
+    --text-color:  #292929;
+}
+
+.hide-element {
+    display: none;
+}
+
+body {
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/muzammil-soorma-KTdzeb28jyo-unsplash.jpg);
+    background-size: 100% auto; /* Ajusta el ancho al 100% y el alto crece con la imagen */
+    background-position: top center; /* Empieza a mostrarse desde la parte superior */
+    background-repeat: no-repeat; /* Evita que la imagen se duplique abajo */
+    background-attachment: scroll; /* La imagen se mueve de forma natural al hacer scroll */
+    margin: 0;
+    min-height: 100vh;
+}
+/* img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+} */
+------------------------------------------
+/* 1. typography */
+
+h1 {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  font-size: 60px;
+}
+
+h2 {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+h3 {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+/* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: linear-gradient(0deg, var(--complementary-color),var(--principal-color));
+  border-bottom: 3px solid var(--complementary-color);
+  text-decoration: none;
+}
+
+.bt-principal {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    text-decoration: none;
+    background-color: white;
+    padding: 5px 10px;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    transition: 0.4s all ease;
+    color: var(--complementary-color);
+}
+
+.bt-principal:hover {
+    padding: 7px 12px;
+    background-color: rgba(0, 0, 0, 0%);
+    color: white;
+
+}
+
+/* actividades destacadas*/
+
+.flex-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 100px 0;
+    align-items: stretch;
+    padding: 30px 30px 100px 30px;
+    
+}
+
+.articulo-index {
+    margin: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--complementary-color);
+    color: white;
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.articulo-index a {
+    margin-top: auto;          /* Empuja el enlace hasta el fondo de la tarjeta */
+    align-self: flex-start;
+}
+
+.articulo-index img {
+    width: 100%;             /* Ocupa todo el ancho de la tarjeta */
+  height: 220px;           /* Define una altura fija  */
+  object-fit: cover;
+}
+
+#img-elements{
+    padding: 30px 0 0 0;
+}
+
+/* experiencia */
+
+#experiencia iframe{
+    padding: 50px 20px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
+#experiencia h2 {
+    padding-bottom: 20px;
+}
+
+
+/* 5. destacados */
+
+.destacados-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 100px 0;
+    align-items: stretch;
+    padding: 30px 30px 100px 30px;
+}
+
+.destacados-container article {
+    margin: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--complementary-color);
+    color: white;
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.destacados-container article a {
+    margin-top: auto;          /* Empuja el enlace hasta el fondo de la tarjeta */
+    align-self: flex-start;
+
+}
+
+.destacados-container article p {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* 6. mapa */
+.mapa {
+    padding: 50px 20px;
+    border-radius: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mapa iframe {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    max-width: 600px; /* Limita el ancho máximo del mapa */
+    height: 450px; /* Altura fija para mantener la proporción */
+    padding: 0; /* Elimina el padding interno del ifame */
+
+}
+
+.mapa h2 {
+    padding-bottom: 20px;
+}
+
+
+footer {
+    background-color: var(--complementary-color);
+    color: white;
+    text-align: center;
+    padding: 50px 300px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.4s all ease;
+    background-color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+
+}
+
+footer a:hover {
+    color: var(--principal-color);
+    text-decoration: none;
+    padding: 7px 12px;
+}
+
+footer h3 {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+

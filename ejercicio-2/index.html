@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,700;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width, initial-scale:1.0">
+        <title>Turismo Miami Ciudad - Sitio Oficial de Información Turística</title>
+        <meta name="description" content="Descrubí qué hacer en Miami. información útil antes de llegar, guías de alojamiento, atractivos turísticos, agenda cultural y mapas de la ciudad.">
+        <meta name="robots" content="index, follow">
+    </head>
+
+    <body>
+
+        <!-- Cabecera principal del sitio -->
+        <header>
+            <!-- Logo del sitio 
+            href-> la dirección a donde voy al dar clic  
+            -->
+            <a href="index.html" aria-label="Ir a la página de inicio de Turismo de Miami">
+                <img src="assets/Seal_of_Miami,_Florida.svg" id="logotipo" alt="Logotipo oficial de Turismo Miami" height="100" width="100">
+            </a>
+
+            <!-- Navegador principal -->
+            <nav role="navigation" aria-label="Menu principal">
+                  <a href="" class="bt-principal">Qué hacer</a>
+                  <a href="" class="bt-principal">Antes de llegar</a>
+                  <a href="" class="bt-principal">Información</a>
+                  <a href="" class="bt-principal">Contacto</a>
+            </nav>
+
+        </header>
+
+
+
+        <!-- Contenido principal del sitio -->
+        <main role="main">
+
+            <h2 class="hide-element">Portal de Turismo Oficial de la Ciudad de Miami</h2>
+
+            <!-- Actividades destacadas-->
+            <section id="img-elements">
+                <h2>Actividades destacadas en la ciudad</h2>
+
+                <br>
+                
+                <div class="flex-elements">
+
+                    <!-- tarjeta -->
+                    <article role="article" class="articulo-index">
+                        <img src="assets/crabs-claws-envolved.jpg" alt="tenazas de cangrejo envueltas"  height="300" width="400">
+                        <h3>Dónde Comer</h3>
+                        <p>En este buscador, vas a poder filtrar por nombre, tipo de establecimiento y por barrio</p>
+                        <a href="" aria-label="Ir al buscador de restaurantes y de comida en Miami" class="bt-principal">ver más</a>
+                    </article>
+
+                    <!-- tarjeta -->
+                    <article role="article" class="articulo-index">
+                        <img src="assets/images (1).jpg" alt="camarones">
+                        <h3>¿Cuál es el sabor de la gastronomía porteña?</h3>
+                        <p>En Miami vas a encontrar platos típicos y comida de todo el mundo</p>
+                        <a href="" aria-label="Ver información sobre grastonomía porteña" class="bt-principal">ver más</a>
+                    </article>
+
+                    <!-- tarjeta -->
+                    <article role="article" class="articulo-index">
+                        <img src="assets/images.jpg" alt="sandwich de cordero">
+                        <h3>Mercados y patios Gastronómicos</h3>
+                        <p>Conocé los patios y mercados en donde podés disfrutar de la mejor gastronomía de la ciudad</p>
+                        <a href="" aria-label="Ver más información sobre los patios gastronómicos de la ciudad" class="bt-principal">ver más</a>
+                    </article>
+
+
+                </div>
+
+            </section>
+            <!-- Fin de actividades destacadas-->
+
+            <!-- Contenido Multimedia -->
+            <section id="experiencia">
+                <h2>Experiencia Miami</h2>
+                <div>
+                    <iframe width="100%" height="830" src="https://www.youtube.com/embed/dgag1tyDCu0?si=rFj7_od6frTpY5_S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </section>
+            <!-- Fin de Contenido Multimedia -->
+
+
+
+            <!-- Contenidos Destacados -->
+            <section id="destacados" aria-labelledby="titulo-destacados">
+                <h2>Destacados de la Semana</h2>
+                <div class="destacados-container">
+                    
+                    <!-- Tarjeta Destacada 1 -->
+                    <article role="article" >
+                        <img src="assets/caption.jpg" alt="Sunny isles beach" width="400" height="250">
+                        <p>Playa Sunny Isles Beach</p>
+                        <a href="" aria-label="Ver más sobre playas" class="bt-principal">Ver Más</a>
+                    </article>
+
+                    <!-- Tarjeta Destacada 2 -->
+                    <article role="article" >
+                        <img src="assets/grove-at-grand-bay-image-by-rasmus-hjortshoj-01_original.jpg" alt="arquitectura de la ciuda de Miami" width="400" height="250">
+                        <p>Estilo arquitectonico</p>
+                        <a href="" aria-label="Ver más sobre la arquitectura de miami" class="bt-principal">Ver Más</a>
+                    </article>
+
+                    <!-- Tarjeta Destacada 3 -->
+                    <article role="article">
+                        <img src="assets/miami-at-night_article_1.jpg" alt="La ciudad de miami en la noche" width="400" height="250">
+                        <p>Sitios nocturnos en Miami</p>
+                        <a href="" aria-label="Ver más sobre la experiencia nocturna en Miami" class="bt-principal">Ver Más</a>
+                    </article>
+
+                </div>
+            </section>
+
+
+            <!-- Ubicación Geográfica -->
+            <section aria-labelledby="titulo-mapa" class="mapa">
+                <h2 id="titulo-mapa">Ubicación y Centros de Atención al Turista</h2>
+                <div class="map-container">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229929.2133779566!2d-80.39020462891557!3d25.78232116205203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20Florida%2C%20EE.%20UU.!5e0!3m2!1ses!2sco!4v1789256957192!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                        height="450"
+                        width="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa interactivo de la Ciudad de Miami con centros de atención turística"></iframe>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Pie de Página Institucional -->
+    <footer role="contentinfo">
+
+            <!-- Identificador Institucional del Footer -->
+            <div class="footer-brand">
+                <img src="assets/Seal_of_Miami,_Florida.svg" alt="Logotipo oficial del Gobierno de la Ciudad de Buenos Aires" width="100" height="100">
+            </div>
+
+            <!-- Columnas de Enlaces del Footer -->
+            <div class="flex-elements">
+                
+                <!-- Lista 1: Prestadores -->
+                <nav>
+                    <h3 id="footer-prestadores">Prestadores</h3>
+                    <ul>
+                        <li><a href="/alquileres-temporales">Alquileres Temporales</a></li>
+                        <li><a href="/alojamientos-turisticos">Alojamientos turísticos</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Lista 2: Profesionales -->
+                <nav>
+                    <h3 id="footer-profesionales">Profesionales</h3>
+                    <ul>
+                        <li><a href="/observatorio-turistico">Observatorio turístico</a></li>
+                        <li><a href="/turismo-reuniones">Turismo de Reuniones</a></li>
+                        <li><a href="/prensa-contacto">Prensa: material y contacto</a></li>
+                        <li><a href="/noticias-ente">Noticias del ente de turismo</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Lista 3: Interacción y Contacto -->
+                <nav>
+                    <h3 id="footer-contacto">Contacto e Interacción</h3>
+                    <ul>
+                        <li><a href="/contactate-con-nosotros">Contactate con nosotros</a></li>
+                        <li><a href="/suscribete-newsletter" aria-label="Ir al formulario para suscribirse al Newsletter oficial">Suscríbete al Newsletter</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+    </footer>
+
+    </body>
+
+</html>
