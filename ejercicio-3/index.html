@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyCon Colombia 2028</title>
+    <meta name="description" content="PyCon Colombia 2028 — la conferencia de Python más grande de Colombia. Edición Amazonía: charlas, keynotes, talleres y comunidad.">
+    <meta name="theme-color" content="#17454B">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Big Shoulders Display reemplaza a Agency Gothic CT (fuente del moodboard, no disponible en la web) -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Big+Shoulders+Display:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+
+    <!-- ===================== ESCENA PARALLAX (fondo) ===================== -->
+    <div class="scene" id="scene" aria-hidden="true">
+        <div class="sky sky--day"></div>
+        <div class="sky sky--dusk"></div>
+        <div class="sky sky--night"></div>
+        <!-- Las capas se dibujan en parallax.js. data-depth = cuánto reaccionan al mouse y al scroll -->
+        <div class="layer" data-depth="0.03" data-scroll="0.15" id="layer-stars"></div>
+        <div class="layer layer--celestial" data-depth="0.04" id="layer-sun"></div>
+        <div class="layer layer--celestial" data-depth="0.05" id="layer-moon"></div>
+        <div class="layer" data-depth="0.09" data-scroll="0.12" id="layer-tepuis"></div>
+        <div class="layer" data-depth="0.17" data-scroll="0.22" id="layer-canopy"></div>
+        <div class="layer" data-depth="0.27" data-scroll="0.34" id="layer-river"></div>
+        <div class="layer" data-depth="0.40" data-scroll="0.48" id="layer-forest"></div>
+        <div class="layer" data-depth="0.58" data-scroll="0.66" id="layer-animals"></div>
+        <div class="layer" data-depth="0.86" data-scroll="0.95" id="layer-foreground"></div>
+        <div class="layer" data-depth="0.72" data-scroll="-0.9" id="layer-vines"></div>
+        <div class="layer layer--fx" data-depth="0.65" data-scroll="0.3" id="layer-butterflies"></div>
+        <div class="layer layer--fx" data-depth="0.5" data-scroll="0.2" id="layer-fireflies"></div>
+        <div class="night-tint"></div>
+    </div>
+
+    <!-- ===================== CABECERA ===================== -->
+    <header class="site-header" id="top">
+        <a href="#inicio" class="brand" aria-label="PyCon Colombia 2028, inicio">
+            <svg class="brand__logo" viewBox="0 0 64 64" aria-hidden="true">
+                <defs>
+                    <path id="snake" d="M31.5 3C22 3 17 6.4 17 12.5V20h15v3H10.5C4.6 23 1 27.6 1 36.5S4.6 50 10.5 50H16v-8.3C16 35.8 20.6 31 26.5 31h13c4.9 0 8.5-3.8 8.5-8.6V12.5C48 6.6 42 3 31.5 3Z"/>
+                </defs>
+                <use href="#snake" fill="#3FB0AC"/>
+                <use href="#snake" fill="#F39419" transform="rotate(180 32 32)"/>
+                <circle cx="24" cy="11.5" r="2.8" fill="#FBF8EA"/>
+                <circle cx="40" cy="52.5" r="2.8" fill="#FBF8EA"/>
+            </svg>
+            <span class="brand__text">PyCon <b>CO</b> <small>2028</small></span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+            <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+            <span class="sr-only" data-i18n="menu">Menú</span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Menú principal">
+            <a href="#acerca" data-i18n="nav.about">Acerca</a>
+            <a href="#keynotes" data-i18n="nav.keynotes">Keynotes</a>
+            <a href="#agenda" data-i18n="nav.schedule">Agenda</a>
+            <a href="#cfp" data-i18n="nav.cfp">Charlas</a>
+            <a href="#boletas" data-i18n="nav.tickets">Boletas</a>
+            <a href="#patrocinadores" data-i18n="nav.sponsors">Patrocinadores</a>
+            <a href="#lugar" data-i18n="nav.venue">Lugar</a>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
+            <div class="main-nav__actions">
+                <button class="lang-toggle" type="button" aria-label="Cambiar idioma / Change language">
+                    <span data-lang="es" class="is-active">ES</span><span data-lang="en">EN</span>
+                </button>
+                <a class="btn btn--primary btn--sm" href="#boletas" data-i18n="cta.buy">Comprar boleta</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido">
+
+        <!-- ===================== HERO ===================== -->
+        <section class="hero" id="inicio">
+            <p class="hero__eyebrow" data-i18n="hero.eyebrow">Décima primera edición · Edición Amazonía</p>
+            <h1 class="hero__title">
+                <span class="hero__title-small">PyCon</span>
+                <span class="hero__title-big">Colombia <em>2028</em></span>
+            </h1>
+            <p class="hero__lead" data-i18n="hero.lead">La conferencia de Python más grande de Colombia. Tres días de charlas, keynotes, talleres y comunidad, creciendo juntos como la selva.</p>
+
+            <ul class="hero__facts">
+                <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v3M17 2v3M3 9h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg>
+                    <span data-i18n="hero.date">21 – 23 de julio, 2028</span>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    <span>Medellín · Universidad EAFIT</span>
+                </li>
+            </ul>
+
+            <div class="hero__ctas">
+                <a class="btn btn--primary" href="#boletas" data-i18n="cta.tickets">Obtén tu boleta</a>
+                <a class="btn btn--ghost" href="#cfp" data-i18n="cta.cfp">Propón una charla</a>
+            </div>
+
+            <div class="countdown" role="timer" aria-live="off" aria-label="Cuenta regresiva para PyCon Colombia 2028">
+                <div class="countdown__item"><span id="cd-days">000</span><small data-i18n="cd.days">días</small></div>
+                <div class="countdown__item"><span id="cd-hours">00</span><small data-i18n="cd.hours">horas</small></div>
+                <div class="countdown__item"><span id="cd-mins">00</span><small data-i18n="cd.mins">min</small></div>
+                <div class="countdown__item"><span id="cd-secs">00</span><small data-i18n="cd.secs">seg</small></div>
+            </div>
+
+            <a class="scroll-hint" href="#acerca" aria-label="Bajar">
+                <span data-i18n="scroll">Explora la selva</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+        </section>
+
+        <!-- ===================== ACERCA ===================== -->
+        <section class="section" id="acerca">
+            <div class="panel panel--light reveal">
+                <div class="split">
+                    <div>
+                        <p class="kicker" data-i18n="about.kicker">Sobre la conferencia</p>
+                        <h2 class="section-title" data-i18n="about.title">Una comunidad que crece como la selva</h2>
+                        <p data-i18n="about.p1">PyCon Colombia es una conferencia sin ánimo de lucro, organizada por voluntarios de la comunidad Python y otros líderes de tecnología del país. Cada año reunimos a personas desarrolladoras, científicas de datos, estudiantes, docentes y curiosas para aprender, compartir y conectar.</p>
+                        <p data-i18n="about.p2">En 2028 celebramos nuestra undécima edición inspirada en la Amazonía: un ecosistema diverso, interconectado y lleno de vida, igual que nuestra comunidad.</p>
+                    </div>
+                    <ul class="stats">
+                        <li><b data-count="600">0</b><span data-i18n="stats.people">+ asistentes</span></li>
+                        <li><b data-count="30">0</b><span data-i18n="stats.talks">charlas</span></li>
+                        <li><b data-count="5">0</b><span data-i18n="stats.keynotes">keynotes internacionales</span></li>
+                        <li><b data-count="15">0</b><span data-i18n="stats.workshops">+ talleres</span></li>
+                        <li><b data-count="3">0</b><span data-i18n="stats.days">días</span></li>
+                        <li><b data-count="11">0</b><span data-i18n="stats.edition">ª edición</span></li>
+                    </ul>
+                </div>
+
+                <h3 class="sub-title" data-i18n="incl.title">Tu boleta incluye</h3>
+                <ul class="features">
+                    <li class="feature feature--teal">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg>
+                        <h4 data-i18n="incl.talks.t">Charlas</h4>
+                        <p data-i18n="incl.talks.d">Acceso completo a ~30 charlas en español e inglés.</p>
+                    </li>
+                    <li class="feature feature--orange">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7Z"/></svg>
+                        <h4 data-i18n="incl.keynotes.t">Keynotes</h4>
+                        <p data-i18n="incl.keynotes.d">5 keynotes de invitados internacionales.</p>
+                    </li>
+                    <li class="feature feature--pink">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18l-3 3-7-7 3-3 6.7-6.7a4 4 0 0 0 2 2Z"/></svg>
+                        <h4 data-i18n="incl.workshops.t">Talleres</h4>
+                        <p data-i18n="incl.workshops.d">Más de 15 talleres prácticos el primer día.</p>
+                    </li>
+                    <li class="feature feature--green">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16a8 8 0 0 1-16 0ZM8 4c0 2 2 2 2 4M12 3c0 2 2 2 2 4M16 4c0 2 2 2 2 4"/></svg>
+                        <h4 data-i18n="incl.food.t">Alimentación</h4>
+                        <p data-i18n="incl.food.d">Almuerzo, refrigerio de mañana y de tarde los 3 días.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===================== KEYNOTES ===================== -->
+        <section class="section" id="keynotes">
+            <div class="section-head reveal">
+                <p class="kicker kicker--light" data-i18n="kn.kicker">Voces de la selva</p>
+                <h2 class="section-title section-title--light">Keynotes</h2>
+                <p class="section-lead" data-i18n="kn.lead">Cinco personas referentes del ecosistema Python a nivel mundial. Las iremos revelando muy pronto.</p>
+            </div>
+            <ul class="speakers">
+                <li class="speaker reveal" style="--accent: var(--teal)">
+                    <div class="speaker__avatar"><svg viewBox="0 0 100 100"><use href="#ico-jaguar"/></svg></div>
+                    <h3 data-i18n="kn.tba">Por anunciar</h3>
+                    <p data-i18n="kn.role1">Core developer de CPython</p>
+                </li>
+                <li class="speaker reveal" style="--accent: var(--orange)">
+                    <div class="speaker__avatar"><svg viewBox="0 0 100 100"><use href="#ico-toucan"/></svg></div>
+                    <h3 data-i18n="kn.tba">Por anunciar</h3>
+                    <p data-i18n="kn.role2">Ciencia de datos e IA</p>
+                </li>
+                <li class="speaker reveal" style="--accent: var(--pink)">
+                    <div class="speaker__avatar"><svg viewBox="0 0 100 100"><use href="#ico-butterfly"/></svg></div>
+                    <h3 data-i18n="kn.tba">Por anunciar</h3>
+                    <p data-i18n="kn.role3">Fellow de la PSF</p>
+                </li>
+                <li class="speaker reveal" style="--accent: var(--green)">
+                    <div class="speaker__avatar"><svg viewBox="0 0 100 100"><use href="#ico-capybara"/></svg></div>
+                    <h3 data-i18n="kn.tba">Por anunciar</h3>
+                    <p data-i18n="kn.role4">Ciencia abierta</p>
+                </li>
+                <li class="speaker reveal" style="--accent: var(--deep)">
+                    <div class="speaker__avatar"><svg viewBox="0 0 100 100"><use href="#ico-leaf"/></svg></div>
+                    <h3 data-i18n="kn.tba">Por anunciar</h3>
+                    <p data-i18n="kn.role5">Comunidad latinoamericana</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ===================== AGENDA ===================== -->
+        <section class="section" id="agenda">
+            <div class="panel panel--dark reveal">
+                <p class="kicker kicker--light" data-i18n="sch.kicker">Programa</p>
+                <h2 class="section-title section-title--light" data-i18n="sch.title">Agenda</h2>
+                <p class="section-lead" data-i18n="sch.lead">Agenda tentativa. El programa final se publicará cuando cierre la convocatoria de charlas.</p>
+
+                <div class="tabs" role="tablist" aria-label="Días de la conferencia">
+                    <button role="tab" id="tab-1" aria-controls="day-1" aria-selected="true" class="tab">
+                        <b data-i18n="sch.d1">Viernes 21</b><small data-i18n="sch.d1s">Talleres</small>
+                    </button>
+                    <button role="tab" id="tab-2" aria-controls="day-2" aria-selected="false" class="tab" tabindex="-1">
+                        <b data-i18n="sch.d2">Sábado 22</b><small data-i18n="sch.d2s">Charlas</small>
+                    </button>
+                    <button role="tab" id="tab-3" aria-controls="day-3" aria-selected="false" class="tab" tabindex="-1">
+                        <b data-i18n="sch.d3">Domingo 23</b><small data-i18n="sch.d3s">Charlas y sprints</small>
+                    </button>
+                </div>
+
+                <div class="tab-panel" id="day-1" role="tabpanel" aria-labelledby="tab-1">
+                    <ol class="timeline">
+                        <li><time>07:30</time><div><b data-i18n="ev.reg">Registro y bienvenida</b></div></li>
+                        <li class="is-keynote"><time>08:30</time><div><b data-i18n="ev.open">Apertura + Keynote</b><span>Auditorio Fundadores</span></div></li>
+                        <li><time>10:00</time><div><b data-i18n="ev.ws1">Talleres bloque A</b><span data-i18n="ev.ws1d">Python desde cero · Data science con pandas · Django</span></div></li>
+                        <li class="is-break"><time>12:30</time><div><b data-i18n="ev.lunch">Almuerzo</b></div></li>
+                        <li><time>14:00</time><div><b data-i18n="ev.ws2">Talleres bloque B</b><span data-i18n="ev.ws2d">FastAPI · MicroPython y hardware · ML con scikit-learn</span></div></li>
+                        <li class="is-break"><time>16:00</time><div><b data-i18n="ev.snack">Refrigerio</b></div></li>
+                        <li><time>16:30</time><div><b data-i18n="ev.ws3">Talleres bloque C</b><span data-i18n="ev.ws3d">Contribuir al open source · Testing con pytest</span></div></li>
+                    </ol>
+                </div>
+                <div class="tab-panel" id="day-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                    <ol class="timeline">
+                        <li><time>08:00</time><div><b data-i18n="ev.reg">Registro y bienvenida</b></div></li>
+                        <li class="is-keynote"><time>09:00</time><div><b>Keynote</b><span>Auditorio Fundadores</span></div></li>
+                        <li><time>10:15</time><div><b data-i18n="ev.talks">Charlas en 3 salas</b><span data-i18n="ev.tracks">Web · Datos & IA · Comunidad</span></div></li>
+                        <li class="is-break"><time>12:30</time><div><b data-i18n="ev.lunch">Almuerzo</b></div></li>
+                        <li class="is-keynote"><time>14:00</time><div><b>Keynote</b><span>Auditorio Fundadores</span></div></li>
+                        <li><time>15:00</time><div><b data-i18n="ev.talks">Charlas en 3 salas</b><span data-i18n="ev.tracks">Web · Datos & IA · Comunidad</span></div></li>
+                        <li class="is-break"><time>16:30</time><div><b data-i18n="ev.snack">Refrigerio</b></div></li>
+                        <li><time>17:00</time><div><b>Lightning talks</b><span data-i18n="ev.lt">5 minutos, cualquier tema, mucha energía</span></div></li>
+                        <li class="is-social"><time>19:00</time><div><b data-i18n="ev.social">Fiesta de la comunidad</b></div></li>
+                    </ol>
+                </div>
+                <div class="tab-panel" id="day-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+                    <ol class="timeline">
+                        <li><time>08:30</time><div><b data-i18n="ev.reg">Registro y bienvenida</b></div></li>
+                        <li class="is-keynote"><time>09:00</time><div><b>Keynote</b><span>Auditorio Fundadores</span></div></li>
+                        <li><time>10:15</time><div><b data-i18n="ev.talks">Charlas en 3 salas</b><span data-i18n="ev.tracks">Web · Datos & IA · Comunidad</span></div></li>
+                        <li class="is-break"><time>12:30</time><div><b data-i18n="ev.lunch">Almuerzo</b></div></li>
+                        <li><time>14:00</time><div><b>Open spaces & sprints</b><span data-i18n="ev.sprints">Contribuye a proyectos open source con sus mantenedores</span></div></li>
+                        <li class="is-keynote"><time>16:30</time><div><b data-i18n="ev.closing">Keynote de cierre</b></div></li>
+                        <li class="is-social"><time>17:30</time><div><b data-i18n="ev.photo">Foto grupal y despedida</b></div></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CFP ===================== -->
+        <section class="section" id="cfp">
+            <div class="cfp reveal">
+                <div>
+                    <p class="kicker" data-i18n="cfp.kicker">Convocatoria abierta</p>
+                    <h2 class="section-title" data-i18n="cfp.title">Comparte lo que sabes</h2>
+                    <p data-i18n="cfp.p">Buscamos charlas (30 min), talleres (2 h) y lightning talks sobre web, datos, IA, educación, ciencia, hardware, comunidad y todo lo que Python hace posible. Si nunca has dado una charla, te acompañamos con mentorías.</p>
+                    <div class="cfp__ctas">
+                        <a class="btn btn--primary" href="#" data-i18n="cfp.btn">Enviar propuesta</a>
+                        <a class="btn btn--outline" href="#" data-i18n="cfp.mentor">Quiero mentoría</a>
+                    </div>
+                </div>
+                <ul class="deadlines">
+                    <li><time>01 · 02 · 2028</time><span data-i18n="dl.open">Abre la convocatoria</span></li>
+                    <li><time>31 · 03 · 2028</time><span data-i18n="dl.close">Cierre de propuestas</span></li>
+                    <li><time>30 · 04 · 2028</time><span data-i18n="dl.notify">Notificación a ponentes</span></li>
+                    <li><time>15 · 05 · 2028</time><span data-i18n="dl.grants">Cierre de becas</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===================== BOLETAS ===================== -->
+        <section class="section" id="boletas">
+            <div class="section-head reveal">
+                <p class="kicker kicker--light" data-i18n="tk.kicker">Únete a la manada</p>
+                <h2 class="section-title section-title--light" data-i18n="tk.title">Boletas</h2>
+                <p class="section-lead" data-i18n="tk.lead">Precios en pesos colombianos. Todas las boletas incluyen los 3 días, alimentación y kit de bienvenida.</p>
+            </div>
+            <ul class="tickets">
+                <li class="ticket reveal">
+                    <h3 data-i18n="tk.student">Estudiante</h3>
+                    <p class="ticket__price">$180.000 <small>COP</small></p>
+                    <ul>
+                        <li data-i18n="tk.all">Acceso a los 3 días</li>
+                        <li data-i18n="tk.food">Alimentación incluida</li>
+                        <li data-i18n="tk.studentReq">Requiere carné vigente</li>
+                    </ul>
+                    <a class="btn btn--outline" href="#" data-i18n="tk.buy">Comprar</a>
+                </li>
+                <li class="ticket ticket--featured reveal">
+                    <span class="ticket__badge" data-i18n="tk.popular">Más popular</span>
+                    <h3 data-i18n="tk.general">General</h3>
+                    <p class="ticket__price">$350.000 <small>COP</small></p>
+                    <ul>
+                        <li data-i18n="tk.all">Acceso a los 3 días</li>
+                        <li data-i18n="tk.food">Alimentación incluida</li>
+                        <li data-i18n="tk.kit">Kit y camiseta oficial</li>
+                    </ul>
+                    <a class="btn btn--primary" href="#" data-i18n="tk.buy">Comprar</a>
+                </li>
+                <li class="ticket reveal">
+                    <h3 data-i18n="tk.corp">Corporativa</h3>
+                    <p class="ticket__price">$750.000 <small>COP</small></p>
+                    <ul>
+                        <li data-i18n="tk.all">Acceso a los 3 días</li>
+                        <li data-i18n="tk.invoice">Factura electrónica</li>
+                        <li data-i18n="tk.support">Apoyas a la comunidad</li>
+                    </ul>
+                    <a class="btn btn--outline" href="#" data-i18n="tk.buy">Comprar</a>
+                </li>
+                <li class="ticket ticket--grant reveal">
+                    <h3 data-i18n="tk.grant">Becas</h3>
+                    <p class="ticket__price" data-i18n="tk.free">Gratis</p>
+                    <ul>
+                        <li data-i18n="tk.grant1">Para quienes no pueden pagar</li>
+                        <li data-i18n="tk.grant2">Apoyo de viaje y hospedaje</li>
+                        <li data-i18n="tk.grant3">Prioridad a grupos subrepresentados</li>
+                    </ul>
+                    <a class="btn btn--outline" href="#" data-i18n="tk.apply">Aplicar</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ===================== PATROCINADORES ===================== -->
+        <section class="section" id="patrocinadores">
+            <div class="panel panel--light reveal">
+                <p class="kicker" data-i18n="sp.kicker">Quienes hacen posible PyCon CO</p>
+                <h2 class="section-title" data-i18n="sp.title">Patrocinadores</h2>
+
+                <h3 class="tier tier--gold" data-i18n="sp.t1">Jaguar · Diamante</h3>
+                <div class="logos logos--xl">
+                    <a href="#" class="logo-slot" data-i18n="sp.slot">Tu logo aquí</a>
+                </div>
+                <h3 class="tier tier--teal" data-i18n="sp.t2">Tucán · Oro</h3>
+                <div class="logos logos--lg">
+                    <a href="#" class="logo-slot" data-i18n="sp.slot">Tu logo aquí</a>
+                    <a href="#" class="logo-slot" data-i18n="sp.slot">Tu logo aquí</a>
+                </div>
+                <h3 class="tier tier--pink" data-i18n="sp.t3">Mariposa · Plata</h3>
+                <div class="logos">
+                    <a href="#" class="logo-slot" data-i18n="sp.slot">Tu logo aquí</a>
+                    <a href="#" class="logo-slot" data-i18n="sp.slot">Tu logo aquí</a>
+                    <a href="#" class="logo-slot" data-i18n="sp.slot">Tu logo aquí</a>
+                </div>
+                <h3 class="tier tier--green" data-i18n="sp.t4">Comunidades aliadas</h3>
+                <div class="logos logos--sm">
+                    <span class="community">Python Colombia</span>
+                    <span class="community">PyLadies</span>
+                    <span class="community">Python Software Foundation</span>
+                    <span class="community">Django Girls</span>
+                    <span class="community">Python Medellín</span>
+                </div>
+
+                <div class="sponsor-cta">
+                    <p data-i18n="sp.cta">¿Tu empresa quiere llegar a la comunidad Python más grande del país?</p>
+                    <a class="btn btn--primary" href="#" data-i18n="sp.btn">Descarga el brochure</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== LUGAR ===================== -->
+        <section class="section" id="lugar">
+            <div class="venue reveal">
+                <div class="venue__info">
+                    <p class="kicker kicker--light" data-i18n="vn.kicker">El lugar</p>
+                    <h2 class="section-title section-title--light">Universidad EAFIT</h2>
+                    <p data-i18n="vn.p">Carrera 49 #7 Sur-50, Medellín, Antioquia. Un campus verde con más de 500 especies de plantas y fauna urbana: el hogar perfecto para nuestra edición Amazonía.</p>
+                    <ul class="venue__list">
+                        <li data-i18n="vn.metro">Metro: estación Aguacatala (línea A), 10 min caminando</li>
+                        <li data-i18n="vn.air">Aeropuerto José María Córdova (MDE) a 50 min</li>
+                        <li data-i18n="vn.hotel">Tarifas especiales en hoteles aliados</li>
+                    </ul>
+                    <a class="btn btn--primary" href="https://www.openstreetmap.org/?mlat=6.2003&mlon=-75.5781#map=16/6.2003/-75.5781" target="_blank" rel="noopener" data-i18n="vn.map">Cómo llegar</a>
+                </div>
+                <div class="venue__map">
+                    <iframe title="Mapa de la Universidad EAFIT" loading="lazy"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5841%2C6.1963%2C-75.5721%2C6.2043&amp;layer=mapnik&amp;marker=6.2003%2C-75.5781"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CÓDIGO DE CONDUCTA + VOLUNTARIOS ===================== -->
+        <section class="section" id="comunidad">
+            <div class="duo">
+                <article class="card card--pink reveal" id="coc">
+                    <h2 class="card__title" data-i18n="coc.title">Código de conducta</h2>
+                    <p data-i18n="coc.p">PyCon Colombia es un espacio seguro, diverso e inclusivo. El acceso y la participación están sujetos al cumplimiento del Código de Conducta por parte de todas las personas: asistentes, ponentes, patrocinadores y voluntarios.</p>
+                    <a class="btn btn--light" href="#" data-i18n="coc.btn">Leer el código</a>
+                </article>
+                <article class="card card--green reveal">
+                    <h2 class="card__title" data-i18n="vol.title">Sé voluntario</h2>
+                    <p data-i18n="vol.p">PyCon CO existe gracias a decenas de voluntarios. Ayúdanos con logística, registro, redes, diseño o acompañando a ponentes, y vive la conferencia desde adentro.</p>
+                    <a class="btn btn--light" href="#" data-i18n="vol.btn">Quiero ayudar</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================== FAQ ===================== -->
+        <section class="section" id="faq">
+            <div class="panel panel--light reveal">
+                <p class="kicker" data-i18n="faq.kicker">¿Dudas?</p>
+                <h2 class="section-title" data-i18n="faq.title">Preguntas frecuentes</h2>
+                <div class="faq">
+                    <details>
+                        <summary data-i18n="faq.q1">¿Necesito saber Python para asistir?</summary>
+                        <p data-i18n="faq.a1">¡Para nada! Hay talleres para principiantes y charlas para todos los niveles. Lo único que necesitas es curiosidad.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q2">¿En qué idioma son las charlas?</summary>
+                        <p data-i18n="faq.a2">La mayoría son en español. Algunas keynotes y charlas serán en inglés, y lo indicaremos en la agenda.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q3">¿Puedo transferir o reembolsar mi boleta?</summary>
+                        <p data-i18n="faq.a3">Puedes transferirla a otra persona hasta 7 días antes del evento escribiéndonos. Los reembolsos aplican hasta 30 días antes.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q4">¿Las charlas quedan grabadas?</summary>
+                        <p data-i18n="faq.a4">Sí. Las charlas de la sala principal se publican en nuestro canal de YouTube unas semanas después del evento.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q5">¿El lugar es accesible?</summary>
+                        <p data-i18n="faq.a5">Sí, el campus cuenta con rampas y ascensores. Si necesitas algún apoyo particular, escríbenos y lo coordinamos.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q6">¿Hay espacio para niños y niñas?</summary>
+                        <p data-i18n="faq.a6">Estamos trabajando en un espacio de cuidado infantil. Indícalo en tu registro para tenerte en cuenta.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== NEWSLETTER ===================== -->
+        <section class="section section--narrow" id="newsletter">
+            <form class="newsletter reveal" novalidate>
+                <h2 class="card__title" data-i18n="nl.title">No te pierdas nada</h2>
+                <p data-i18n="nl.p">Recibe noticias de keynotes, agenda y boletas.</p>
+                <div class="newsletter__row">
+                    <label class="sr-only" for="nl-email">Email</label>
+                    <input id="nl-email" type="email" placeholder="tu@email.com" required autocomplete="email">
+                    <button class="btn btn--primary" type="submit" data-i18n="nl.btn">Suscribirme</button>
+                </div>
+                <p class="newsletter__msg" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- ===================== PIE DE PÁGINA ===================== -->
+    <footer class="site-footer">
+        <div class="site-footer__grid">
+            <div>
+                <p class="site-footer__brand">PyCon Colombia 2028</p>
+                <p data-i18n="ft.about">Conferencia sin ánimo de lucro organizada por la comunidad Python de Colombia.</p>
+                <a href="mailto:info@pycon.co">info@pycon.co</a>
+            </div>
+            <nav aria-label="Ediciones anteriores">
+                <p class="site-footer__h" data-i18n="ft.past">Ediciones anteriores</p>
+                <ul>
+                    <li><a href="https://2026.pycon.co/">2026</a></li>
+                    <li><a href="https://2025.pycon.co/">2025</a></li>
+                    <li><a href="#">2024</a></li>
+                    <li><a href="#">2023</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Enlaces">
+                <p class="site-footer__h" data-i18n="ft.links">Enlaces</p>
+                <ul>
+                    <li><a href="#coc" data-i18n="coc.title">Código de conducta</a></li>
+                    <li><a href="#cfp" data-i18n="nav.cfp">Charlas</a></li>
+                    <li><a href="#patrocinadores" data-i18n="nav.sponsors">Patrocinadores</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <div>
+                <p class="site-footer__h" data-i18n="ft.follow">Síguenos</p>
+                <ul class="social">
+                    <li><a href="https://x.com/pyconcolombia" aria-label="X / Twitter"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a></li>
+                    <li><a href="https://www.facebook.com/pyconcolombia/" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8Z"/></svg></a></li>
+                    <li><a href="https://www.linkedin.com/company/pycon-colombia" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M5 9v11M5 4.5v.5M10 20v-6a3 3 0 0 1 6 0v6M10 9v11M16 14a3 3 0 0 1 4 0v6"/></svg></a></li>
+                    <li><a href="https://www.youtube.com/pyconcolombia" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3Z"/></svg></a></li>
+                    <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="site-footer__legal">© 2028 PyCon Colombia · <span data-i18n="ft.made">Hecho con 🐍 y 🌿 por voluntarios</span></p>
+    </footer>
+
+    <a class="to-top" href="#top" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+    </a>
+
+    <!-- Iconos reutilizables (avatares de keynotes) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="ico-jaguar" viewBox="0 0 100 100">
+            <polygon points="22,30 30,10 42,26" fill="#F39419"/><polygon points="58,26 70,10 78,30" fill="#F39419"/>
+            <polygon points="20,32 50,22 80,32 84,60 50,86 16,60" fill="#F39419"/>
+            <polygon points="50,22 80,32 84,60 50,86" fill="#D9771A"/>
+            <polygon points="36,60 64,60 58,78 50,82 42,78" fill="#FBF8EA"/>
+            <polygon points="44,60 56,60 50,68" fill="#17454B"/>
+            <polygon points="30,44 42,42 40,50" fill="#17454B"/><polygon points="58,42 70,44 60,50" fill="#17454B"/>
+        </symbol>
+        <symbol id="ico-toucan" viewBox="0 0 100 100">
+            <ellipse cx="40" cy="60" rx="22" ry="30" fill="#17454B"/>
+            <ellipse cx="44" cy="48" rx="13" ry="14" fill="#FBF8EA"/>
+            <path d="M48 34 Q86 28 94 46 Q72 50 50 50Z" fill="#F39419"/>
+            <path d="M50 50 Q72 50 94 46 Q80 58 52 56Z" fill="#E8336F"/>
+            <circle cx="38" cy="38" r="7" fill="#FBF8EA"/><circle cx="38" cy="38" r="4" fill="#111"/>
+        </symbol>
+        <symbol id="ico-butterfly" viewBox="0 0 100 100">
+            <g fill="none" stroke="#F3B53A" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M50 30 C30 6 6 20 18 44 C24 54 40 52 50 48Z"/>
+                <path d="M50 30 C70 6 94 20 82 44 C76 54 60 52 50 48Z"/>
+                <path d="M50 48 C34 54 26 76 40 80 C48 82 50 66 50 56Z"/>
+                <path d="M50 48 C66 54 74 76 60 80 C52 82 50 66 50 56Z"/>
+                <path d="M50 28 V74 M50 28 L42 16 M50 28 L58 16"/>
+            </g>
+        </symbol>
+        <symbol id="ico-capybara" viewBox="0 0 100 100">
+            <rect x="14" y="40" width="64" height="40" rx="20" fill="#C86B3C"/>
+            <rect x="52" y="26" width="38" height="30" rx="12" fill="#B05A30"/>
+            <rect x="70" y="36" width="22" height="20" rx="8" fill="#9A4B2A"/>
+            <circle cx="62" cy="24" r="5" fill="#9A4B2A"/>
+            <path d="M60 36 h8" stroke="#17454B" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="66" cy="16" r="8" fill="#F39419"/><path d="M66 8 l3 -4" stroke="#1E6B44" stroke-width="3"/>
+        </symbol>
+        <symbol id="ico-leaf" viewBox="0 0 100 100">
+            <path d="M50 92 C10 70 12 26 50 8 C88 26 90 70 50 92Z" fill="#3FB0AC"/>
+            <path d="M50 92 V14 M50 40 L32 28 M50 40 L68 28 M50 58 L28 46 M50 58 L72 46 M50 74 L34 64 M50 74 L66 64" stroke="#FBF8EA" stroke-width="3" stroke-linecap="round" fill="none"/>
+        </symbol>
+    </svg>
+
+    <script src="parallax.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
